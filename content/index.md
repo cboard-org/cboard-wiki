@@ -1,3 +1,3 @@
-# Cboard Wiki
+/* Title: Home */
 
-Please login to see content
+Welcome to Cboard Wiki

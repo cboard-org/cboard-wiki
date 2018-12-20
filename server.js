@@ -9,7 +9,9 @@ const config = require('./config.js');
 // with our configuration object
 const app = raneto(config);
 
+const PORT = process.env.PORT || process.env.WIKI_PORT || 3000;
+
 // Load the HTTP Server
-const server = app.listen(app.get('port'), function () {
+const server = app.listen(PORT, function () {
   debug('Raneto Server listening on port ' + server.address().port);
 });
