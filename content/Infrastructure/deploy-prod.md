@@ -15,38 +15,7 @@ The above command will pull the bootstrap image needed to deploy and run Cboard.
 ```
 $ docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
-    -e URL \
-    -e SUBDOMAINS \
-    -e VALIDATION \
-    -e EMAIL \
-    -e ONLY_SUBDOMAINS=true \
-    -e PUID=”$(id -u $USER)” \
-    -e PGID=”$(id -g $USER)” \
-    -e AZURE_STORAGE_CONNECTION_STRING \
-    -e SENDGRID_API_KEY \
-    -e JWT_SECRET \
-    -e FACEBOOK_APP_ID \
-    -e FACEBOOK_APP_SECRET \
-    -e FACEBOOK_CALLBACK_URL \
-    -e GOOGLE_APP_ID \
-    -e GOOGLE_APP_SECRET \
-    -e GOOGLE_CALLBACK_URL \
-    -e GOOGLE_APPLICATION_CREDENTIALS \
-    -e REACT_APP_AZURE_INST_KEY \
-    -e API_SESSION_SECRET \
-    -e REACT_APP_BANNER_ADVICE_UNIT_ID \
-    -e REACT_APP_INTERSTITIAL_ADVICE_UNIT_ID \
-    -e APPLICATIONINSIGHTS_CONNECTION_STRING \
-    -e IP_INFO_TOKEN \
-    -e GOOGLE_PLAY_CREDENTIALS \
-    -e PAYPAL_API_CLIENT_ID \
-    -e PAYPAL_API_CLIENT_SECRET \
-    -e APPLE_APP_CLIENT_ID \
-    -e APPLE_TEAM_ID \
-    -e APPLE_KEY_ID \
-    -e APPLE_CALLBACK_URL \
-    -e CBOARD_APP_URL \
-    -e NODE_ENV
+    --env-file /home/sharedFolder/env.prod \
     cboard/cboard-bootstrap \
     up -d
 ```
@@ -55,7 +24,7 @@ The above command will run a new instance of `cboard/cboard-bootstrap` docker im
 
 The parameter `-v /var/run/docker.sock:/var/run/docker.sock` is needed just to share the same docker engine (host and cboard-bootstrap instance).
 
-Each `-e` parameter will provide the environment variables and their values to bootstrap container. If there is no right hand value, it will assume that host’s env variable value should be passed to the container.
+If the deploy is for QA, the `--env-file /home/sharedFolder/env.prod` parameter should be replaced with `--env-file /home/sharedFolder/env.qa`.
 
 #### Update a Service
 
