@@ -109,7 +109,7 @@ After applying the changes, verify that the Let's Encrypt SSL certificate is wor
 
 5. Edit the PowerShell runbook and paste the contents of https://github.com/cboard-org/cboard-wiki/blob/master/themes/default/public/scripts/renew-letsencryp.ps1. Click on the “Publish” button to make it available for scheduling.
 
-Test the runbook on the Test pane, and pass the required parameters (Expires Days, domain names, email address used on Let's Encrypt, resource group names, storage account name, application gateway name when setting up the https listener). It takes around 15 minutes to complete. After browsing the site again with https, the certificate should be updated correctly.
+Test the runbook on the Test pane, and pass the required parameters (Expires Days, domain with subdomains separeted with "," like `app.qa.cboard.io,api.app.qa.cboard.io,wiki.qa.cboard.io` , email address used on Let's Encrypt, resource group names, storage account name, application gateway name when setting up the https listener). It takes around 15 minutes to complete. After browsing the site again with https, the certificate should be updated correctly.
 
 6. Create an Azure Automation Schedule to renew the SSL certificate. For example, a schedule for renewing it every 3 weeks can be created.
 ![6](/themes/default/public/images/ssl-autorenew-images/f2d4bf48-e355-4a20-9ef8-2a0a624e0b8d.png)
