@@ -16,11 +16,11 @@
   "author": "Cboard",
   "license": "ISC",
   "dependencies": {
-    "debug": "^4.1.0",
-    "dotenv": "^6.2.0",
-    "raneto": "^0.16.0"
+    "debug": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "raneto": "^0.17.6"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^3.0.2"
   }
 }
