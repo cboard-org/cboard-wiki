@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:18.18.1
 
 WORKDIR /wiki
 
