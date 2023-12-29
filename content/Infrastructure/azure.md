@@ -41,10 +41,10 @@ To provide an SSL certificate to Azure App Gateway, an HTTPS listener with a Let
 1. Set up an Azure Storage account to host the challenge requests for the DNS domain ownership check. Choose the most cost-effective parameters such as “Standard performance” and LRS. 
 
 2. After the storage account is ready, create a “public” container with “public blob” permissions.
-![2](images/ssl-autorenew-images/6c913dfa-681e-4c31-b986-c805c6c08ad9.png)
+![2](/images/ssl-autorenew-images/6c913dfa-681e-4c31-b986-c805c6c08ad9.png)
 
 3. Use the Storage Explorer tool to create the virtual directory “\.well-known\acme-challenge”.
-![3](images/ssl-autorenew-images/d5923013-af23-49ae-97a3-354750084039.png)
+![3](/images/ssl-autorenew-images/d5923013-af23-49ae-97a3-354750084039.png)
 
 ###### Step 2: Modify the Application Gateway to Redirect ACME Challenge Requests to the Storage Account
 
